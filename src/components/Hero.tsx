@@ -12,18 +12,15 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden snap-start px-4">
-      {/* Background Video */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-60"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-pink-and-purple-smoke-background-40342-large.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <img
+          src="https://i.ibb.co/Qv7XN8m3/448713816-3519770338297962-1640159803593772433-n.jpg"
+          alt="Bramingham Barely Hero"
+          className="w-full h-full object-cover opacity-70"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
       </div>
 
       <div className="relative z-10 text-center w-full max-w-5xl mx-auto">
