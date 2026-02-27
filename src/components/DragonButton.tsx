@@ -151,9 +151,9 @@ export const DragonButton: React.FC = () => {
             hover: { y: 10, opacity: 1 },
             idle: { y: 0, opacity: 0.7 }
           }}
-          className="block mt-4 text-pink-primary font-bold tracking-[0.3em] text-[10px] uppercase"
+          className="block mt-4 text-[#FF69B4] font-bold tracking-[0.3em] text-[10px] uppercase"
         >
-          Take Flight
+          HIYA IM LIV
         </motion.span>
       </motion.button>
     </div>
