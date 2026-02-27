@@ -7,11 +7,25 @@ export const Navbar: React.FC = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 w-full z-50 px-6 py-8 flex justify-between items-center mix-blend-difference"
+      className="fixed top-0 left-0 w-full z-50 px-6 py-8 flex justify-between items-center bg-black/10 backdrop-blur-sm"
     >
       <div className="flex items-center gap-2">
-        <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter text-white">
-          BRAMINGHAM <span className="text-pink-primary">BARELY</span>
+        <span 
+          className="font-sans text-4xl md:text-5xl font-black tracking-[-0.1em] leading-none select-none"
+          style={{
+            backgroundImage: "url('https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg')",
+            backgroundSize: "150% auto",
+            backgroundPosition: "center",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+            display: "inline-block",
+            filter: "drop-shadow(0 0 1px rgba(255,255,255,0.3))",
+            transform: "scaleX(1.2)",
+            transformOrigin: "left center"
+          }}
+        >
+          B/B
         </span>
       </div>
       
