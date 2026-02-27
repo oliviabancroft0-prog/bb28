@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
+import { motion } from 'motion/react';
 import { CustomCursor } from './components/CustomCursor';
 import { Particles } from './components/Particles';
 import { Navbar } from './components/Navbar';
@@ -223,3 +224,4 @@ export default function App() {
     </main>
   );
 }
+

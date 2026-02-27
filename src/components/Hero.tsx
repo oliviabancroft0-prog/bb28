@@ -2,14 +2,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 
-export const Hero: React.FC = () => {
-  const scrollToFirst = () => {
-    const firstSection = document.getElementById('strategy');
-    if (firstSection) {
-      firstSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+import { DragonButton } from './DragonButton';
 
+export const Hero: React.FC = () => {
   return (
     <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden snap-start px-4">
       {/* Background Image */}
@@ -25,35 +20,12 @@ export const Hero: React.FC = () => {
 
       <div className="relative z-10 text-center w-full max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-4 md:space-y-6"
-        >
-        </motion.div>
-
-        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="mt-8 md:mt-16"
+          className="mt-8 md:mt-16 flex justify-center"
         >
-          <motion.button
-            onClick={scrollToFirst}
-            whileHover={{ scale: 1.05, y: -5 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-12 py-5 bg-pink-primary text-white font-bold tracking-[0.4em] text-xs uppercase overflow-hidden transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,0,170,0.6)]"
-          >
-            <span className="relative z-10">Take Flight</span>
-            
-            {/* Thrust/Shine effect */}
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"
-            />
-            
-            {/* Particle thrust simulation */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1 bg-white/40 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.button>
+          <DragonButton />
         </motion.div>
       </div>
 
