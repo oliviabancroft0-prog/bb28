@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://i.ibb.co/Qv7XN8m3/448713816-3519770338297962-1640159803593772433-n.jpg"
+          src="https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/448620471_1120898959206141_6879917844997512699_n.webp"
           alt="Bramingham Barely Hero"
           className="w-full h-full object-cover opacity-70"
           referrerPolicy="no-referrer"
@@ -36,9 +36,6 @@ export const Hero: React.FC = () => {
           </h1>
           
           <div className="flex flex-col items-center gap-2 md:gap-4">
-            <p className="text-pink-primary tracking-[0.3em] md:tracking-[0.5em] font-bold text-xs md:text-base uppercase">
-              Where UK Creators Take Flight
-            </p>
             <p className="text-white/40 text-[10px] md:text-xs tracking-[0.1em] md:tracking-[0.2em] font-light uppercase">
               London • Est. 2024 • OnlyFans Management Agency
             </p>
