@@ -30,16 +30,6 @@ export const Hero: React.FC = () => {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-4 md:space-y-6"
         >
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-serif tracking-tighter leading-none">
-            BRAMINGHAM <br />
-            <span className="text-pink-primary italic">BARELY</span>
-          </h1>
-          
-          <div className="flex flex-col items-center gap-2 md:gap-4">
-            <p className="text-white/40 text-[10px] md:text-xs tracking-[0.1em] md:tracking-[0.2em] font-light uppercase">
-              London • Est. 2024 • OnlyFans Management Agency
-            </p>
-          </div>
         </motion.div>
 
         <motion.div
