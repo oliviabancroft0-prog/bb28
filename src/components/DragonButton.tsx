@@ -30,16 +30,16 @@ export const DragonButton: React.FC = () => {
   const handleTakeFlight = () => {
     setIsFiring(true);
     
-    // Scroll to the bespoke content mastery section after a short delay to let the fire start
+    // Scroll to the bespoke content mastery section after the fire animation finishes (approx 1s)
     setTimeout(() => {
       const section = document.getElementById('strategy');
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 300);
+    }, 1000);
 
-    // Reset firing state after the animation
-    setTimeout(() => setIsFiring(false), 1200);
+    // Reset firing state
+    setTimeout(() => setIsFiring(false), 1500);
   };
 
   return (

@@ -52,7 +52,7 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
   return (
     <section
       id={id}
-      className="relative min-h-screen w-full flex items-center bg-white text-zinc-900 overflow-hidden py-24 md:py-32"
+      className="relative min-h-screen w-full flex items-center bg-white text-zinc-900 overflow-hidden py-24 md:py-32 snap-start"
     >
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
