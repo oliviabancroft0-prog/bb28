@@ -61,12 +61,11 @@ export const CinematicSection: React.FC<SectionProps> = ({
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="order-first lg:order-last"
             >
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-pink-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative">
                 <img
                   src={imageUrl}
                   alt={title}
-                  className="relative rounded-2xl shadow-2xl w-full h-auto max-h-[70vh] object-contain border border-white/10"
+                  className="w-full h-auto max-h-[70vh] object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>

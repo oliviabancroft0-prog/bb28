@@ -100,7 +100,6 @@ const SECTIONS = [
     title: 'TALENT CONNECTIONS',
     description: 'Exclusive access to our network of top-tier UK creators, photographers, and high-net-worth brand partners.',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-abstract-pink-and-purple-smoke-background-40342-large.mp4',
-    imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/efbf98fc-966a-46d3-856f-60e00872176c.jpg',
     logData: {
       title: 'Network Synergy',
       quote: 'Your network is your net worth. We provide the keys to the most exclusive rooms in London.',
