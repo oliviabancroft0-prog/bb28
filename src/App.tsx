@@ -6,6 +6,7 @@ import { Particles } from './components/Particles';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CinematicSection } from './components/CinematicSection';
+import { PremiumWhiteSection } from './components/PremiumWhiteSection';
 
 const SECTIONS = [
   {
@@ -171,7 +172,19 @@ export default function App() {
       <Navbar />
       
       <Hero />
-      {SECTIONS.map((section) => (
+      
+      {/* First Section: Premium White Section */}
+      <PremiumWhiteSection
+        id={SECTIONS[0].id}
+        number={SECTIONS[0].number}
+        title={SECTIONS[0].title}
+        description={SECTIONS[0].description}
+        imageUrl={SECTIONS[0].imageUrl!}
+        logData={SECTIONS[0].logData}
+      />
+
+      {/* Other Sections: Cinematic Section */}
+      {SECTIONS.slice(1).map((section) => (
         <CinematicSection
           key={section.id}
           id={section.id}

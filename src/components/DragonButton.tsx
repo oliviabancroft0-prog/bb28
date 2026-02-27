@@ -29,14 +29,17 @@ export const DragonButton: React.FC = () => {
 
   const handleTakeFlight = () => {
     setIsFiring(true);
-    // Reset firing state after a short delay
-    setTimeout(() => setIsFiring(false), 1000);
     
-    // Scroll to the bespoke content mastery section
-    const section = document.getElementById('strategy');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Scroll to the bespoke content mastery section after a short delay to let the fire start
+    setTimeout(() => {
+      const section = document.getElementById('strategy');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 300);
+
+    // Reset firing state after the animation
+    setTimeout(() => setIsFiring(false), 1200);
   };
 
   return (
@@ -132,16 +135,21 @@ export const DragonButton: React.FC = () => {
             <path d="M120,55 L125,40 L110,52 Z" fill="#FF99CC" />
           </svg>
 
-          {/* Fire from mouth when firing */}
+          {/* Fire from mouth when firing - shooting downwards */}
           {isFiring && (
             <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: [1, 4, 10], opacity: [1, 1, 0] }}
-              transition={{ duration: 1.5 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+              initial={{ scale: 0, opacity: 0, y: 30 }}
+              animate={{ 
+                scale: [1, 3, 6], 
+                opacity: [1, 1, 0],
+                y: [30, 100, 200] 
+              }}
+              transition={{ duration: 1, ease: "easeIn" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 z-20"
             >
-              <div className="w-10 h-10 bg-orange-500 rounded-full blur-xl" />
-              <div className="absolute inset-0 w-10 h-10 bg-yellow-400 rounded-full blur-lg scale-75" />
+              <div className="w-12 h-12 bg-orange-500 rounded-full blur-xl" />
+              <div className="absolute inset-0 w-12 h-12 bg-yellow-400 rounded-full blur-lg scale-75" />
+              <div className="absolute inset-0 w-12 h-12 bg-red-500 rounded-full blur-2xl scale-125 opacity-50" />
             </motion.div>
           )}
         </motion.div>
