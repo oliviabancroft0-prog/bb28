@@ -78,6 +78,7 @@ const SECTIONS = [
     title: 'REVENUE OPTIMIZATION',
     description: 'Data-driven pricing models and PPV strategies that extract maximum value from your existing fan base without burnout.',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pink-and-blue-ink-in-water-40344-large.mp4',
+    imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/625956760_18146412925456285_752801370196229266_n.webp',
     logData: {
       title: 'Financial Thrust',
       quote: 'We turn creative passion into a scalable, high-margin business enterprise.',
@@ -99,6 +100,7 @@ const SECTIONS = [
     title: 'TALENT CONNECTIONS',
     description: 'Exclusive access to our network of top-tier UK creators, photographers, and high-net-worth brand partners.',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-abstract-pink-and-purple-smoke-background-40342-large.mp4',
+    imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/efbf98fc-966a-46d3-856f-60e00872176c.jpg',
     logData: {
       title: 'Network Synergy',
       quote: 'Your network is your net worth. We provide the keys to the most exclusive rooms in London.',
