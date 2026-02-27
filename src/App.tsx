@@ -38,6 +38,7 @@ const SECTIONS = [
     description: 'Aggressive cross-platform funneling and viral loops that drive high-intent traffic directly to your premium profile.',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-abstract-pink-and-blue-smoke-background-40341-large.mp4',
     imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/321668193_200064589253755_8883311078046560340_n.webp',
+    bgColor: '#012169',
     logData: {
       title: 'Growth Dynamics',
       quote: 'Visibility is the currency of the digital age. We ensure you are the most valuable creator in the room.',
@@ -193,6 +194,7 @@ export default function App() {
           description={section.description}
           videoUrl={section.videoUrl}
           imageUrl={section.imageUrl}
+          bgColor={section.id === 'marketing' ? '#012169' : undefined}
           logData={section.logData}
         />
       ))}

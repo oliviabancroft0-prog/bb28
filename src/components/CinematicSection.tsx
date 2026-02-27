@@ -10,6 +10,7 @@ interface SectionProps {
   description: string;
   videoUrl: string;
   imageUrl?: string;
+  bgColor?: string;
   logData: {
     title: string;
     quote: string;
@@ -25,6 +26,7 @@ export const CinematicSection: React.FC<SectionProps> = ({
   description,
   videoUrl,
   imageUrl,
+  bgColor,
   logData,
 }) => {
   const [isLogOpen, setIsLogOpen] = useState(false);
@@ -33,23 +35,26 @@ export const CinematicSection: React.FC<SectionProps> = ({
     <section
       id={id}
       className="relative h-screen w-full flex items-center overflow-hidden snap-start"
+      style={bgColor ? { backgroundColor: bgColor } : {}}
     >
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0">
-        <motion.video
-          autoPlay
-          loop
-          muted
-          playsInline
-          initial={{ scale: 1.1 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="w-full h-full object-cover opacity-40"
-        >
-          <source src={videoUrl} type="video/mp4" />
-        </motion.video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-      </div>
+      {/* Background Video - Only show if no bgColor or if we want it as an overlay */}
+      {!bgColor && (
+        <div className="absolute inset-0 z-0">
+          <motion.video
+            autoPlay
+            loop
+            muted
+            playsInline
+            initial={{ scale: 1.1 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            className="w-full h-full object-cover opacity-40"
+          >
+            <source src={videoUrl} type="video/mp4" />
+          </motion.video>
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+        </div>
+      )}
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className={`grid gap-12 items-center ${imageUrl ? 'lg:grid-cols-2' : 'max-w-4xl'}`}>
