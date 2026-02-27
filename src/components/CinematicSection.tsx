@@ -66,7 +66,7 @@ export const CinematicSection: React.FC<SectionProps> = ({
                 <img
                   src={imageUrl}
                   alt={title}
-                  className="relative rounded-2xl shadow-2xl w-full h-auto max-h-[60vh] object-cover border border-white/10"
+                  className="relative rounded-2xl shadow-2xl w-full h-auto max-h-[70vh] object-contain border border-white/10"
                   referrerPolicy="no-referrer"
                 />
               </div>

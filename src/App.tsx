@@ -10,8 +10,8 @@ const SECTIONS = [
   {
     id: 'strategy',
     number: '01',
-    title: 'CONTENT STRATEGY MASTERY',
-    description: 'Bespoke production roadmaps designed to maximize engagement and retention through cinematic storytelling and trend analysis.',
+    title: 'BESPOKE CONTENT MASTERY',
+    description: 'Tailored production roadmaps meticulously crafted to elevate engagement and retention, blending refined cinematic storytelling with sharp trend analysis for the discerning creator.',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pink-and-purple-ink-in-water-40343-large.mp4',
     imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/363081938_963561091574316_727691502030451980_n.webp',
     logData: {
@@ -35,6 +35,7 @@ const SECTIONS = [
     title: 'MARKETING & GROWTH',
     description: 'Aggressive cross-platform funneling and viral loops that drive high-intent traffic directly to your premium profile.',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-abstract-pink-and-blue-smoke-background-40341-large.mp4',
+    imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/321668193_200064589253755_8883311078046560340_n.webp',
     logData: {
       title: 'Growth Dynamics',
       quote: 'Visibility is the currency of the digital age. We ensure you are the most valuable creator in the room.',
