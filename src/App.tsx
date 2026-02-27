@@ -13,6 +13,7 @@ const SECTIONS = [
     title: 'CONTENT STRATEGY MASTERY',
     description: 'Bespoke production roadmaps designed to maximize engagement and retention through cinematic storytelling and trend analysis.',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pink-and-purple-ink-in-water-40343-large.mp4',
+    imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/363081938_963561091574316_727691502030451980_n.webp',
     logData: {
       title: 'Strategic Elevation',
       quote: 'We don\'t just post content; we curate digital experiences that turn casual viewers into dedicated patrons.',
@@ -175,6 +176,7 @@ export default function App() {
           title={section.title}
           description={section.description}
           videoUrl={section.videoUrl}
+          imageUrl={section.imageUrl}
           logData={section.logData}
         />
       ))}
