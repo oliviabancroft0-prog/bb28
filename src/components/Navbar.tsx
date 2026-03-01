@@ -63,9 +63,13 @@ export const Navbar: React.FC = () => {
       <div className="hidden md:flex items-center gap-8">
       </div>
 
-      <button className="interactive px-6 py-2 border border-pink-primary/30 text-pink-primary text-[10px] tracking-[0.2em] font-bold hover:bg-pink-primary hover:text-white transition-all duration-500 rounded-full">
+      <motion.button 
+        whileHover={{ backgroundColor: "rgba(255, 105, 180, 0)", color: "#FF69B4" }}
+        whileTap={{ scale: 0.95 }}
+        className="interactive px-6 py-2 bg-[#FF69B4] border border-[#FF69B4] text-black text-[10px] tracking-[0.2em] font-bold transition-all duration-500 rounded-full"
+      >
         GET IN TOUCH
-      </button>
+      </motion.button>
     </motion.nav>
   );
 };

@@ -57,19 +57,19 @@ export const DragonButton: React.FC = () => {
             hover: { opacity: 0.6, scale: 1.2 },
             idle: { opacity: 0, scale: 1 }
           }}
-          className="absolute inset-0 bg-orange-400 blur-3xl rounded-full pointer-events-none"
+          className="absolute inset-0 bg-pink-400 blur-3xl rounded-full pointer-events-none"
         />
 
         <motion.div
           variants={{
-            idle: { y: [0, -15, 0] },
+            idle: { y: [0, -10, 0] },
             tap: { scale: [1, 0.8, 1.1, 1] }
           }}
           transition={{
             idle: { repeat: Infinity, duration: 3, ease: "easeInOut" },
             tap: { duration: 0.4 }
           }}
-          className="relative w-48 h-48 flex items-center justify-center"
+          className="relative w-32 h-32 flex items-center justify-center"
         >
           <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-2xl">
             {/* Wings */}
@@ -147,22 +147,12 @@ export const DragonButton: React.FC = () => {
               transition={{ duration: 1, ease: "easeIn" }}
               className="absolute top-1/2 left-1/2 -translate-x-1/2 z-20"
             >
-              <div className="w-12 h-12 bg-orange-500 rounded-full blur-xl" />
-              <div className="absolute inset-0 w-12 h-12 bg-yellow-400 rounded-full blur-lg scale-75" />
-              <div className="absolute inset-0 w-12 h-12 bg-red-500 rounded-full blur-2xl scale-125 opacity-50" />
+              <div className="w-12 h-12 bg-pink-500 rounded-full blur-xl" />
+              <div className="absolute inset-0 w-12 h-12 bg-pink-300 rounded-full blur-lg scale-75" />
+              <div className="absolute inset-0 w-12 h-12 bg-pink-600 rounded-full blur-2xl scale-125 opacity-50" />
             </motion.div>
           )}
         </motion.div>
-
-        <motion.span
-          variants={{
-            hover: { y: 10, opacity: 1 },
-            idle: { y: 0, opacity: 0.7 }
-          }}
-          className="block mt-4 text-[#FF69B4] font-bold tracking-[0.3em] text-[10px] uppercase"
-        >
-          HIYA IM LIV
-        </motion.span>
       </motion.button>
     </div>
   );

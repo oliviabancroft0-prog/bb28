@@ -18,24 +18,16 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
       </div>
 
-      <div className="relative z-10 text-center w-full max-w-5xl mx-auto">
+      <div className="relative z-10 text-center w-full max-w-5xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 1 }}
-          className="mt-8 md:mt-16 flex justify-center"
+          transition={{ delay: 1, duration: 1 }}
+          className="mt-24 md:mt-32 flex justify-center"
         >
           <DragonButton />
         </motion.div>
       </div>
-
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30"
-      >
-        <ChevronDown size={32} />
-      </motion.div>
     </section>
   );
 };
