@@ -8,6 +8,7 @@ import { Hero } from './components/Hero';
 import { CinematicSection } from './components/CinematicSection';
 import { PremiumWhiteSection } from './components/PremiumWhiteSection';
 import { MarketingGrowthSection } from './components/MarketingGrowthSection';
+import { FanEngagementSection } from './components/FanEngagementSection';
 
 const SECTIONS = [
   {
@@ -197,6 +198,19 @@ export default function App() {
               description={section.description}
               imageUrl={section.imageUrl}
               bgColor={section.bgColor || '#012169'}
+              logData={section.logData}
+            />
+          );
+        }
+        if (section.id === 'engagement') {
+          return (
+            <FanEngagementSection
+              key={section.id}
+              id={section.id}
+              number={section.number}
+              title={section.title}
+              description={section.description}
+              bgColor="#b32624"
               logData={section.logData}
             />
           );
