@@ -7,6 +7,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CinematicSection } from './components/CinematicSection';
 import { PremiumWhiteSection } from './components/PremiumWhiteSection';
+import { MarketingGrowthSection } from './components/MarketingGrowthSection';
 
 const SECTIONS = [
   {
@@ -185,19 +186,35 @@ export default function App() {
       />
 
       {/* Other Sections: Cinematic Section */}
-      {SECTIONS.slice(1).map((section) => (
-        <CinematicSection
-          key={section.id}
-          id={section.id}
-          number={section.number}
-          title={section.title}
-          description={section.description}
-          videoUrl={section.videoUrl}
-          imageUrl={section.imageUrl}
-          bgColor={section.id === 'marketing' ? '#012169' : undefined}
-          logData={section.logData}
-        />
-      ))}
+      {SECTIONS.slice(1).map((section) => {
+        if (section.id === 'marketing') {
+          return (
+            <MarketingGrowthSection
+              key={section.id}
+              id={section.id}
+              number={section.number}
+              title={section.title}
+              description={section.description}
+              imageUrl={section.imageUrl}
+              bgColor={section.bgColor || '#012169'}
+              logData={section.logData}
+            />
+          );
+        }
+        return (
+          <CinematicSection
+            key={section.id}
+            id={section.id}
+            number={section.number}
+            title={section.title}
+            description={section.description}
+            videoUrl={section.videoUrl}
+            imageUrl={section.imageUrl}
+            bgColor={section.id === 'marketing' ? '#012169' : undefined}
+            logData={section.logData}
+          />
+        );
+      })}
 
       <footer className="h-screen flex flex-col items-center justify-center snap-start relative overflow-hidden bg-zinc-950">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
