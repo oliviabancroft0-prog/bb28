@@ -9,6 +9,7 @@ import { CinematicSection } from './components/CinematicSection';
 import { PremiumWhiteSection } from './components/PremiumWhiteSection';
 import { MarketingGrowthSection } from './components/MarketingGrowthSection';
 import { FanEngagementSection } from './components/FanEngagementSection';
+import { Preloader } from './components/Preloader';
 
 const SECTIONS = [
   {
@@ -144,6 +145,25 @@ const SECTIONS = [
 ];
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = 'auto';
+    };
+  }, [isLoading]);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -170,6 +190,7 @@ export default function App() {
 
   return (
     <main className="relative bg-black text-white selection:bg-pink-primary selection:text-white snap-y snap-mandatory">
+      <Preloader isVisible={isLoading} />
       <CustomCursor />
       <Particles />
       <Navbar />
