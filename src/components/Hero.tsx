@@ -12,10 +12,10 @@ export const Hero: React.FC = () => {
         <img
           src="https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/448620471_1120898959206141_6879917844997512699_n.webp"
           alt="Bramingham Barely Hero"
-          className="w-full h-full object-cover opacity-70"
+          className="w-full h-full object-cover opacity-85 brightness-110"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
       </div>
 
       <div className="relative z-10 text-center w-full max-w-5xl mx-auto flex flex-col items-center">
