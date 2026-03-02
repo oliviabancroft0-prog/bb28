@@ -9,6 +9,8 @@ import { CinematicSection } from './components/CinematicSection';
 import { PremiumWhiteSection } from './components/PremiumWhiteSection';
 import { MarketingGrowthSection } from './components/MarketingGrowthSection';
 import { FanEngagementSection } from './components/FanEngagementSection';
+import { RevenueOptimizationSection } from './components/RevenueOptimizationSection';
+import { TalentConnectionSection } from './components/TalentConnectionSection';
 import { Preloader } from './components/Preloader';
 
 const SECTIONS = [
@@ -232,6 +234,30 @@ export default function App() {
               title={section.title}
               description={section.description}
               bgColor="#b32624"
+              logData={section.logData}
+            />
+          );
+        }
+        if (section.id === 'revenue') {
+          return (
+            <RevenueOptimizationSection
+              key={section.id}
+              id={section.id}
+              number={section.number}
+              title={section.title}
+              description={section.description}
+              logData={section.logData}
+            />
+          );
+        }
+        if (section.id === 'talent') {
+          return (
+            <TalentConnectionSection
+              key={section.id}
+              id={section.id}
+              number={section.number}
+              title={section.title}
+              description={section.description}
               logData={section.logData}
             />
           );
