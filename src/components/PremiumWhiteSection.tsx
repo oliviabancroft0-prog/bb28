@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Users, BarChart3, Zap, Database, Instagram, Twitter, Youtube } from 'lucide-react';
 
 interface SectionProps {
   id: string;
@@ -27,11 +27,6 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
   const { scrollYProgress } = useScroll();
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
-  // Split title into lines for masked reveal
-  const titleLines = title.split(' ');
-  const firstHalf = titleLines.slice(0, Math.ceil(titleLines.length / 2)).join(' ');
-  const secondHalf = titleLines.slice(Math.ceil(titleLines.length / 2)).join(' ');
-
   const revealVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
@@ -44,18 +39,29 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
   const containerVariants = {
     visible: {
       transition: {
-        staggerChildren: 0.15
+        staggerChildren: 0.1
       }
     }
   };
 
+  const features = [
+    { icon: <Users size={24} />, title: 'INFLUENCERS', desc: '72% of the students attended on scholarship', color: 'text-blue-500' },
+    { icon: <BarChart3 size={24} />, title: 'ROI', desc: '20% of its student body is currently under scholarship', color: 'text-cyan-500' },
+    { icon: <Zap size={24} />, title: 'SCALE', desc: 'More than 1000 scholarships have been awarded', color: 'text-emerald-500' },
+    { icon: <Database size={24} />, title: 'DATABASE', desc: 'Anatolia College has always relied on donations', color: 'text-purple-500' },
+  ];
+
   return (
     <section
       id={id}
-      className="relative min-h-screen w-full flex items-center bg-white text-zinc-900 overflow-hidden py-24 md:py-32 snap-start"
+      className="relative min-h-screen w-full bg-white text-zinc-900 overflow-hidden py-24 md:py-32 snap-start"
     >
+      {/* Background Decorative Shape */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-zinc-50/50 -skew-x-12 translate-x-1/4 pointer-events-none z-0" />
+
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        {/* Top Split Layout */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
           
           {/* Left Column: Content */}
           <motion.div
@@ -65,111 +71,128 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
             variants={containerVariants}
             className="flex flex-col items-start"
           >
-            {/* Eyebrow Label */}
-            <motion.span
+            <motion.h2
               variants={revealVariants}
-              className="text-pink-primary text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-6"
+              className="text-4xl md:text-6xl font-serif font-bold leading-tight text-zinc-950 mb-8"
             >
-              Section {number} • {logData.title}
-            </motion.span>
+              Bramingham: <span className="text-pink-primary italic">All-in-One</span> Content Mastery Done Right
+            </motion.h2>
 
-            {/* Masked Headline Reveal */}
-            <div className="overflow-hidden mb-6 md:mb-8">
-              <motion.h2
-                initial={{ y: "100%" }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] tracking-tight text-zinc-950"
-              >
-                {firstHalf}
-              </motion.h2>
-            </div>
-            <div className="overflow-hidden mb-8 md:mb-10">
-              <motion.h2
-                initial={{ y: "100%" }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] tracking-tight text-pink-primary italic"
-              >
-                {secondHalf}
-              </motion.h2>
-            </div>
-
-            {/* Supporting Paragraph */}
             <motion.p
               variants={revealVariants}
-              className="text-zinc-600 text-lg md:text-xl leading-relaxed max-w-xl mb-12 font-light"
+              className="text-zinc-500 text-lg md:text-xl leading-relaxed max-w-md mb-12 font-light"
             >
-              {description}
+              Identify, recruit & activate the world's most engaging social influencers.
             </motion.p>
 
-            {/* Feature Mini Cards */}
-            <motion.div 
-              variants={containerVariants}
-              className="grid sm:grid-cols-2 gap-4 w-full mb-12"
+            <motion.button
+              variants={revealVariants}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(255, 0, 170, 0.2)" }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 bg-pink-primary text-white font-bold tracking-[0.2em] text-xs uppercase rounded-full flex items-center gap-3"
             >
-              {logData.results.map((result, index) => (
-                <motion.div
-                  key={index}
-                  variants={revealVariants}
-                  whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.05)" }}
-                  className="group p-5 bg-zinc-50 rounded-2xl border border-zinc-100 transition-all duration-300 flex items-start gap-4"
-                >
-                  <div className="mt-1 text-pink-primary group-hover:rotate-12 transition-transform duration-300">
-                    <CheckCircle2 size={20} />
-                  </div>
-                  <span className="text-sm md:text-base text-zinc-700 font-medium leading-tight">
-                    {result}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div variants={revealVariants} className="flex flex-wrap items-center gap-6">
-              <motion.button
-                whileHover={{ scale: 1.02, boxShadow: "0 10px 30px rgba(255, 0, 170, 0.2)" }}
-                whileTap={{ scale: 0.98 }}
-                className="px-10 py-4 bg-pink-primary text-white font-bold tracking-[0.2em] text-xs uppercase rounded-full transition-all duration-300"
-              >
-                Get Started
-              </motion.button>
-              <motion.button
-                whileHover={{ x: 5 }}
-                className="group flex items-center gap-3 text-zinc-400 hover:text-pink-primary font-bold tracking-[0.2em] text-xs uppercase transition-colors duration-300"
-              >
-                View Case Study
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-              </motion.button>
-            </motion.div>
+              Get Started
+              <ArrowRight size={16} />
+            </motion.button>
           </motion.div>
 
-          {/* Right Column: Image */}
+          {/* Right Column: Image with Floating Icons */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, filter: "blur(10px)" }}
-            whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            style={{ y: yParallax }}
-            className="relative w-full aspect-square md:aspect-auto md:h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl shadow-zinc-200/50"
+            className="relative"
           >
-            <img
-              src={imageUrl}
-              alt={title}
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-            {/* Subtle floating decorative element */}
-            <motion.div
-              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="absolute top-10 right-10 w-24 h-24 bg-pink-primary/10 backdrop-blur-md rounded-3xl border border-white/20"
-            />
-          </motion.div>
+            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-zinc-200/50 bg-white">
+              <img
+                src={imageUrl}
+                alt={title}
+                className="w-full h-auto object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
 
+            {/* Floating Social Icons */}
+            <motion.div
+              animate={{ y: [0, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -top-6 left-10 z-20 w-12 h-12 bg-cyan-400 text-white rounded-2xl flex items-center justify-center shadow-lg rotate-12"
+            >
+              <Twitter size={20} />
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 15, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+              className="absolute top-1/4 -right-6 z-20 w-12 h-12 bg-purple-500 text-white rounded-2xl flex items-center justify-center shadow-lg -rotate-12"
+            >
+              <Instagram size={20} />
+            </motion.div>
+            <motion.div
+              animate={{ x: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 2 }}
+              className="absolute bottom-1/4 -left-6 z-20 w-12 h-12 bg-pink-500 text-white rounded-2xl flex items-center justify-center shadow-lg rotate-6"
+            >
+              <Youtube size={20} />
+            </motion.div>
+          </motion.div>
         </div>
+
+        {/* Middle Centered Text */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-2xl mx-auto mb-32"
+        >
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-zinc-900 mb-6">
+            Take control of your influencer program.
+          </h3>
+          <p className="text-zinc-500 text-lg font-light">
+            Helping talented creators unlock their full potential through strategic management and elite production.
+          </p>
+        </motion.div>
+
+        {/* Bottom Grid Layout */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12"
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              variants={revealVariants}
+              className="flex flex-col items-center text-center group"
+            >
+              <div className={`mb-6 p-4 rounded-2xl bg-zinc-50 group-hover:bg-white group-hover:shadow-xl transition-all duration-300 ${feature.color}`}>
+                {feature.icon}
+              </div>
+              <h4 className="text-xs font-bold tracking-[0.3em] text-zinc-900 mb-4 uppercase">
+                {feature.title}
+              </h4>
+              <p className="text-sm text-zinc-500 leading-relaxed font-light">
+                {feature.desc}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Bottom Link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-24 text-center"
+        >
+          <button className="text-pink-primary text-[10px] font-bold tracking-[0.4em] uppercase hover:tracking-[0.5em] transition-all duration-300 flex items-center gap-2 mx-auto">
+            Check out all the features <ArrowRight size={12} />
+          </button>
+        </motion.div>
       </div>
     </section>
   );
