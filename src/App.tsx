@@ -40,7 +40,7 @@ const SECTIONS = [
     id: 'marketing',
     number: '02',
     title: 'MARKETING & GROWTH',
-    description: 'Aggressive cross-platform funneling and viral loops that drive high-intent traffic directly to your premium profile.',
+    description: "OnlyFans isn't a get rich quick lottery for everyone. The platform average sits around £100–£150 a month without strategy, support, or scale.",
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-abstract-pink-and-blue-smoke-background-40341-large.mp4',
     imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/321668193_200064589253755_8883311078046560340_n.webp',
     bgColor: '#012169',

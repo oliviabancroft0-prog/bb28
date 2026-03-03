@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Globe, Zap, Target, TrendingUp, BarChart } from 'lucide-react';
+import { GrowthStats } from './GrowthStats';
 
 interface SectionProps {
   id: string;
@@ -66,25 +67,20 @@ export const MarketingGrowthSection: React.FC<SectionProps> = ({
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-white/60 text-[10px] font-bold tracking-widest uppercase mb-8 border border-white/5">
-              Get ready for ASCENSION 2024 ↗
-            </span>
-            <h2 className="text-5xl md:text-7xl font-serif font-bold leading-tight text-white mb-8">
-              Crafting high-end <span className="text-pink-primary italic">Growth</span> solutions for your brand.
+            <h2 className="text-4xl md:text-6xl font-serif font-bold leading-tight text-white mb-8">
+              OnlyFans isn't a get rich quick lottery for everyone.
             </h2>
-            <p className="text-white/50 text-lg md:text-xl leading-relaxed max-w-lg mb-12 font-light">
-              {description} Offering guidance and data-powered funnels to creators of all sizes worldwide.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest transition-all"
-            >
-              Sign up
-              <div className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                <ArrowRight size={14} />
+            <div className="space-y-6 mb-12 max-w-lg">
+              <p className="text-white/60 text-lg md:text-xl leading-relaxed font-light">
+                The platform average sits around £100–£150 a month without strategy, support, or scale.
+              </p>
+              <p className="text-yellow-400 text-xl md:text-2xl leading-relaxed font-bold italic">
+                The women I work with? They're hitting £20k, £50k, even £80k+ per month once we dial it in.
+              </p>
+              <div className="pt-8">
+                <GrowthStats />
               </div>
-            </motion.button>
+            </div>
           </motion.div>
 
           <motion.div
@@ -95,18 +91,27 @@ export const MarketingGrowthSection: React.FC<SectionProps> = ({
             className="relative flex justify-center"
           >
             {imageUrl && (
-              <div className="relative w-full max-w-md aspect-square">
-                <motion.img
-                  animate={{ 
-                    y: [0, -20, 0],
-                    rotate: [0, 5, 0]
-                  }}
-                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                  src={imageUrl}
-                  alt="Abstract Growth Graphic"
-                  className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,105,180,0.3)]"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="flex flex-col items-center gap-12">
+                <div className="relative w-full max-w-md aspect-square">
+                  <motion.img
+                    animate={{ 
+                      y: [0, -20, 0],
+                      rotate: [0, 5, 0]
+                    }}
+                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                    src={imageUrl}
+                    alt="Abstract Growth Graphic"
+                    className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,105,180,0.3)]"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-10 py-4 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                >
+                  Our Partners
+                </motion.button>
               </div>
             )}
           </motion.div>

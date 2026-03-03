@@ -57,15 +57,6 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
             transition={{ duration: 0.8 }}
             className="flex flex-col items-start"
           >
-            <div className="flex items-center gap-3 mb-8 px-4 py-2 bg-zinc-100 rounded-full">
-              <div className="w-5 h-5 bg-pink-primary rounded-full flex items-center justify-center">
-                <Star size={12} className="text-white" />
-              </div>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-zinc-500">
-                UK's Biggest & Boldest Agency
-              </span>
-            </div>
-
             <h2 className="text-5xl md:text-7xl font-serif font-bold leading-[1.1] tracking-tight text-zinc-950 mb-6">
               Hey, Olivia here.
             </h2>
@@ -114,19 +105,7 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
 
         {/* Bottom Section: Details */}
         <div className="grid lg:grid-cols-2 gap-12 items-start pt-20 border-t border-zinc-100">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-xl"
-          >
-            <p className="text-2xl md:text-3xl font-serif leading-tight text-zinc-900">
-              Place your trust <Star size={24} className="inline text-pink-primary mx-2" /> in us to provide 
-              a seamless and hassle-free <Eye size={24} className="inline text-zinc-400 mx-2" /> experience 
-              as you navigate the world of <TrendingUp size={24} className="inline text-zinc-900 mx-2" /> premium insights.
-            </p>
-          </motion.div>
+          <div className="hidden lg:block" />
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
