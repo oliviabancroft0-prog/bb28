@@ -20,12 +20,6 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
   id,
   imageUrl,
 }) => {
-  const avatars = [
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100",
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100"
-  ];
-
   return (
     <section
       id={id}
@@ -55,20 +49,7 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
             <h2 className="text-6xl md:text-8xl font-serif font-bold leading-[0.9] tracking-tight text-zinc-950 mb-12">
               Domination <br />
               Done <br />
-              <div className="flex items-center gap-4">
-                <span>Smoothly</span>
-                <div className="flex -space-x-4">
-                  {avatars.map((url, i) => (
-                    <img 
-                      key={i} 
-                      src={url} 
-                      className="w-12 h-12 rounded-full border-4 border-white object-cover" 
-                      alt="avatar"
-                      referrerPolicy="no-referrer"
-                    />
-                  ))}
-                </div>
-              </div>
+              Smoothly
             </h2>
 
             <div className="flex items-center gap-8">
@@ -89,11 +70,11 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
           <div className="relative">
             {/* Main Portrait */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="relative z-10 w-full max-w-md mx-auto aspect-[4/5] bg-pink-100 rounded-[10rem] overflow-hidden shadow-2xl"
+              className="relative z-10 w-full h-full min-h-[600px] overflow-hidden shadow-2xl rounded-3xl"
             >
               <img 
                 src={imageUrl} 
@@ -101,49 +82,6 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
                 alt="Olivia"
                 referrerPolicy="no-referrer"
               />
-            </motion.div>
-
-            {/* Floating Revenue Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -50, y: 50 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute -bottom-10 -left-10 z-20 bg-zinc-900 p-6 rounded-3xl shadow-2xl w-64"
-            >
-              <p className="text-white/50 text-[10px] font-bold tracking-widest uppercase mb-4">Monthly Revenue</p>
-              <div className="flex items-end gap-2 h-24">
-                {[40, 70, 50, 90, 60].map((h, i) => (
-                  <div key={i} className="flex-grow bg-white/10 rounded-t-lg relative overflow-hidden">
-                    <motion.div 
-                      initial={{ height: 0 }}
-                      whileInView={{ height: `${h}%` }}
-                      transition={{ duration: 1, delay: 0.8 + (i * 0.1) }}
-                      className={`absolute bottom-0 left-0 w-full ${i === 3 ? 'bg-pink-primary' : 'bg-white/20'}`}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="flex justify-between mt-2 text-[8px] text-white/30 font-bold uppercase">
-                <span>Jan</span>
-                <span>Feb</span>
-                <span>Mar</span>
-                <span>Apr</span>
-                <span>May</span>
-              </div>
-            </motion.div>
-
-            {/* Floating Percentage */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="absolute top-10 -right-10 z-20"
-            >
-              <span className="text-7xl md:text-8xl font-serif font-bold text-zinc-900 rotate-90 block origin-left">
-                +420%
-              </span>
             </motion.div>
 
             {/* Grid Pattern Decoration */}
