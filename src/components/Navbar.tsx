@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
         whileTap={{ scale: 0.95 }}
         className="interactive px-6 py-2 bg-[#FFD700] border border-[#FFD700] text-black text-[10px] tracking-[0.2em] font-bold transition-all duration-500 rounded-full"
       >
-        GET IN TOUCH
+        MEMBERS
       </motion.button>
     </motion.nav>
   );

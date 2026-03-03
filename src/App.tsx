@@ -122,27 +122,6 @@ const SECTIONS = [
         'Legal & safety protection'
       ]
     }
-  },
-  {
-    id: 'olivia',
-    number: '06',
-    title: 'MEET OLIVIA',
-    description: 'Founded by Olivia Marella Bancroft, a former top 0.3% creator who built a seven-figure empire from the ground up.',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pink-and-purple-ink-in-water-40343-large.mp4',
-    logData: {
-      title: 'Founder\'s Log',
-      quote: 'I built Bramingham Barely because I wanted to provide the agency I wish I had when I started.',
-      stats: [
-        { label: 'Personal Rank', value: 'Top 0.3%' },
-        { label: 'Years Exp.', value: '6+' }
-      ],
-      results: [
-        'Direct mentorship sessions',
-        'Industry-leading safety protocols',
-        'Creator-first management philosophy',
-        'London HQ operations'
-      ]
-    }
   }
 ];
 
@@ -285,26 +264,18 @@ export default function App() {
           <div className="container mx-auto px-6 text-center z-10">
             <h2 className="text-6xl md:text-9xl font-serif mb-12">READY TO <span className="text-pink-primary italic">ASCEND?</span></h2>
             
-            <div className="grid md:grid-cols-3 gap-12 text-left max-w-4xl mx-auto mb-20">
+            <div className="grid md:grid-cols-2 gap-12 text-left max-w-2xl mx-auto mb-20">
               <div className="space-y-4">
                 <p className="text-pink-primary text-[10px] tracking-[0.3em] font-bold uppercase">London HQ</p>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  Mayfair, London<br />
+                  Notting Hill, London<br />
                   United Kingdom
-                </p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-pink-primary text-[10px] tracking-[0.3em] font-bold uppercase">Financials</p>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  Seed Funding: $465k<br />
-                  Min. Project: $5,000+
                 </p>
               </div>
               <div className="space-y-4">
                 <p className="text-pink-primary text-[10px] tracking-[0.3em] font-bold uppercase">Contact</p>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  hello@braminghambarely.com<br />
-                  @braminghambarely
+                  bloom@braminghambarely.top
                 </p>
               </div>
             </div>

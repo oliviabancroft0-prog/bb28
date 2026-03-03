@@ -71,9 +71,15 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const gallerySection = document.getElementById('revenue');
+                  if (gallerySection) {
+                    gallerySection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="px-10 py-5 bg-zinc-900 text-white font-bold tracking-[0.2em] text-xs uppercase rounded-2xl"
               >
-                Get Started
+                GALLERY
               </motion.button>
             </div>
           </motion.div>

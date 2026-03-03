@@ -88,9 +88,9 @@ export const GrowthStats: React.FC = () => {
     {
       label: "Agency Valuation Flex",
       value: "$4.3M",
-      sublabel: "Last Funding Round",
+      sublabel: "Asset Based",
       percentage: 100,
-      description: "Bramingham is the UK's leading agency, valued at $4.3M. Backing real results and empowerment."
+      description: "Our valuation is based on assets and proprietary software. Audit done by Deloitte."
     }
   ];
 
