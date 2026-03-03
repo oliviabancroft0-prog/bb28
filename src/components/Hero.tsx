@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Mouse } from 'lucide-react';
 
 export const Hero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          await videoRef.current.play();
+        } catch (error: any) {
+          // If it was interrupted by power saving, we can't do much but we can try again on first interaction
+          console.warn("Video autoplay failed or was interrupted:", error.message);
+          
+          const handleFirstInteraction = () => {
+            videoRef.current?.play().catch(() => {});
+            window.removeEventListener('touchstart', handleFirstInteraction);
+            window.removeEventListener('mousedown', handleFirstInteraction);
+          };
+          
+          window.addEventListener('touchstart', handleFirstInteraction);
+          window.addEventListener('mousedown', handleFirstInteraction);
+        }
+      }
+    };
+
+    playVideo();
+  }, []);
+
   const scrollToNext = () => {
     const nextSection = document.getElementById('strategy');
     if (nextSection) {
@@ -15,14 +41,15 @@ export const Hero: React.FC = () => {
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          poster="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1920"
           className="w-full h-full object-cover opacity-70"
-        >
-          <source src="https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/Fukumean.mp4" type="video/mp4" />
-        </video>
+          src="https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/Fukumean.mp4"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
       </div>
 
