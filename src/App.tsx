@@ -17,8 +17,8 @@ const SECTIONS = [
   {
     id: 'strategy',
     number: '01',
-    title: 'BESPOKE CONTENT MASTERY',
-    description: 'Tailored production roadmaps meticulously crafted to elevate engagement and retention, blending refined cinematic storytelling with sharp trend analysis for the discerning creator.',
+    title: 'DOMINATION DONE SMOOTHLY',
+    description: 'Hey I\'m Olivia. We\'re Bramingham Barely, the UK\'s biggest OnlyFans agency. We don\'t just play nice; we dominate. Our tech is sharper than a stiletto, and our results? Well, they\'ll leave you breathless. Ready to see how big we can make your bank balance?',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pink-and-purple-ink-in-water-40343-large.mp4',
     imageUrl: 'https://raw.githubusercontent.com/oliviabancroft0-prog/image/main/363081938_963561091574316_727691502030451980_n.webp',
     logData: {
