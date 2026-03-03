@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight, Star, Eye, Zap, ShieldCheck, CreditCard, TrendingUp } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowRight, Star, Eye, Zap, ShieldCheck, CreditCard, TrendingUp, ChevronDown } from 'lucide-react';
 
 interface SectionProps {
   id: string;
@@ -20,6 +20,26 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
   id,
   imageUrl,
 }) => {
+  const [activeItem, setActiveItem] = useState<number | null>(null);
+
+  const features = [
+    { 
+      icon: <ShieldCheck size={20} />, 
+      text: "Discreet & Secure Management",
+      description: "We prioritize your privacy above all else. Our team operates with total anonymity, using secure London-based servers and encrypted communication to ensure your identity and data remain protected 24/7."
+    },
+    { 
+      icon: <Zap size={20} />, 
+      text: "Proprietary Growth Algorithms",
+      description: "Our in-house tech analyzes real-time trends across TikTok, IG, and Reddit to identify viral loops before they peak. We automate your funneling to drive high-intent traffic directly to your profile with surgical precision."
+    },
+    { 
+      icon: <CreditCard size={20} />, 
+      text: "Automated Revenue Optimization",
+      description: "We don't just guess prices. Our dynamic algorithms structure your PPV and subscription tiers based on fan sentiment and historical data, maximizing your earnings while preventing audience burnout."
+    }
+  ];
+
   return (
     <section
       id={id}
@@ -46,11 +66,15 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
               </span>
             </div>
 
-            <h2 className="text-6xl md:text-8xl font-serif font-bold leading-[0.9] tracking-tight text-zinc-950 mb-12">
-              Domination <br />
-              Done <br />
-              Smoothly
+            <h2 className="text-5xl md:text-7xl font-serif font-bold leading-[1.1] tracking-tight text-zinc-950 mb-6">
+              Hey, Olivia here.
             </h2>
+            <p className="text-lg md:text-xl text-zinc-600 font-medium leading-relaxed mb-8 max-w-lg">
+              I've helped models crack six figure months on OnlyFans – genuinely game changing earnings, sorted properly.
+            </p>
+            <p className="text-sm md:text-base text-zinc-500 leading-relaxed mb-12 max-w-lg">
+              Leading Bramingham Barely the UK's top women-led anonymous OnlyFans agency. We empower creators, keep it discreet, cut the faff, and build sustainable success. Women supporting women, full stop.
+            </p>
 
             <div className="flex items-center gap-8">
               <motion.button
@@ -60,9 +84,6 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
               >
                 Get Started
               </motion.button>
-              <button className="flex items-center gap-2 text-zinc-900 font-bold tracking-widest text-xs uppercase border-b-2 border-zinc-900 pb-1">
-                Our Tech
-              </button>
             </div>
           </motion.div>
 
@@ -92,7 +113,7 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
         </div>
 
         {/* Bottom Section: Details */}
-        <div className="grid lg:grid-cols-2 gap-12 items-end pt-20 border-t border-zinc-100">
+        <div className="grid lg:grid-cols-2 gap-12 items-start pt-20 border-t border-zinc-100">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -112,23 +133,45 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            {[
-              { icon: <ShieldCheck size={20} />, text: "Discreet & Secure Management" },
-              { icon: <Zap size={20} />, text: "Proprietary Growth Algorithms" },
-              { icon: <CreditCard size={20} />, text: "Automated Revenue Optimization" }
-            ].map((item, i) => (
-              <div key={i} className="flex items-center justify-between group cursor-pointer border-b border-zinc-100 pb-4">
-                <div className="flex items-center gap-4">
-                  <div className="text-zinc-400 group-hover:text-pink-primary transition-colors">
-                    {item.icon}
+            {features.map((item, i) => (
+              <div 
+                key={i} 
+                className="group cursor-pointer border-b border-zinc-100 pb-4 overflow-hidden"
+                onClick={() => setActiveItem(activeItem === i ? null : i)}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className={`transition-colors duration-300 ${activeItem === i ? 'text-pink-primary' : 'text-zinc-400 group-hover:text-pink-primary'}`}>
+                      {item.icon}
+                    </div>
+                    <span className={`text-sm font-bold tracking-widest uppercase transition-colors duration-300 ${activeItem === i ? 'text-zinc-950' : 'text-zinc-600 group-hover:text-zinc-950'}`}>
+                      {item.text}
+                    </span>
                   </div>
-                  <span className="text-sm font-bold tracking-widest uppercase text-zinc-600 group-hover:text-zinc-950 transition-colors">
-                    {item.text}
-                  </span>
+                  <motion.div
+                    animate={{ rotate: activeItem === i ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronDown size={20} className="text-zinc-300" />
+                  </motion.div>
                 </div>
-                <ArrowRight size={16} className="text-zinc-300 group-hover:translate-x-2 transition-transform" />
+                
+                <AnimatePresence>
+                  {activeItem === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                      animate={{ height: 'auto', opacity: 1, marginTop: 16 }}
+                      exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <p className="text-sm text-zinc-500 leading-relaxed pl-9">
+                        {item.description}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </motion.div>
