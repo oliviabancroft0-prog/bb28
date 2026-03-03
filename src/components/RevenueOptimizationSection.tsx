@@ -17,13 +17,13 @@ interface SectionProps {
 
 const GALLERY_IMAGES = [
   { url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800", label: "London" },
-  { url: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800", label: "Paris" },
-  { url: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=800", label: "Milan" },
-  { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800", label: "Dubai" },
-  { url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800", label: "NYC" },
+  { url: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800", label: "Manchester" },
+  { url: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=800", label: "Birmingham" },
+  { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800", label: "Leeds" },
+  { url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800", label: "Glasgow" },
 ];
 
-const FILTERS = ["All", "London", "Paris", "Milan", "Dubai", "NYC", "Tokyo", "Berlin", "Madrid", "Sydney"];
+const FILTERS = ["All", "London", "Manchester", "Birmingham", "Leeds", "Glasgow", "Liverpool", "Edinburgh", "Bristol", "Sheffield"];
 
 export const RevenueOptimizationSection: React.FC<SectionProps> = ({ id, title, description }) => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -73,12 +73,6 @@ export const RevenueOptimizationSection: React.FC<SectionProps> = ({ id, title, 
           <span className="text-[10px] font-bold tracking-[0.4em] text-zinc-400 uppercase mb-4 block">
             Gallery
           </span>
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-zinc-900 mb-6">
-            Model Preview
-          </h2>
-          <p className="text-zinc-500 text-lg font-light max-w-xl mx-auto">
-            {description} Discover the elite talent defining the new standard of digital influence.
-          </p>
         </div>
 
         {/* Filters */}

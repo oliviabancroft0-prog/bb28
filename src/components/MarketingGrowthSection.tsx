@@ -84,54 +84,39 @@ export const MarketingGrowthSection: React.FC<SectionProps> = ({
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative flex justify-center"
+            className="relative flex flex-col items-center justify-center gap-16"
           >
-            {imageUrl && (
-              <div className="flex flex-col items-center gap-12">
-                <div className="relative w-full max-w-md aspect-square">
-                  <motion.img
-                    animate={{ 
-                      y: [0, -20, 0],
-                      rotate: [0, 5, 0]
-                    }}
-                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                    src={imageUrl}
-                    alt="Abstract Growth Graphic"
-                    className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,105,180,0.3)]"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-10 py-4 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-                >
-                  Our Partners
-                </motion.button>
-              </div>
-            )}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+            >
+              Our Partners
+            </motion.button>
+
+            {/* Infinite Marquee */}
+            <div className="w-full max-w-md overflow-hidden relative py-4">
+              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10 opacity-50" style={{ background: `linear-gradient(to right, ${bgColor}, transparent)` }} />
+              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10 opacity-50" style={{ background: `linear-gradient(to left, ${bgColor}, transparent)` }} />
+              <motion.div
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="flex whitespace-nowrap gap-16"
+              >
+                {[...logos, ...logos, ...logos].map((logo, i) => (
+                  <div key={i} className="flex items-center gap-3 text-white/20 font-bold tracking-tighter text-2xl">
+                    {logo.icon}
+                    <span>{logo.name}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </motion.div>
         </div>
-
-        {/* Logo Cloud */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center items-center gap-12 md:gap-24 mb-32 opacity-40 grayscale hover:grayscale-0 transition-all duration-500"
-        >
-          {logos.map((logo, i) => (
-            <div key={i} className="flex items-center gap-3 text-white font-bold tracking-tighter text-2xl">
-              {logo.icon}
-              <span>{logo.name}</span>
-            </div>
-          ))}
-        </motion.div>
 
         {/* Bottom Card Section */}
         <motion.div
@@ -143,39 +128,23 @@ export const MarketingGrowthSection: React.FC<SectionProps> = ({
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-pink-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-6 block">
+              <span className="text-yellow-400 text-[10px] font-bold tracking-[0.4em] uppercase mb-6 block">
                 Our goal
               </span>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8 leading-tight">
-                Empowering creators through <span className="italic">Marketing</span> Excellence
+              <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6 leading-tight">
+                At Bramingham, we're not here for quick wins or hype. We're building something bigger: <span className="italic text-yellow-400">real financial freedom</span> for women who create, on their terms.
               </h3>
-              <p className="text-white/40 text-lg font-light leading-relaxed mb-12 max-w-md">
-                Our goal is simple yet ambitious: to empower creators of all sizes and industries to unlock their full potential through the transformative power of strategic growth.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest transition-all"
-              >
-                Try it for free
-                <div className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                  <ArrowRight size={14} />
-                </div>
-              </motion.button>
-            </div>
-
-            <div className="relative flex justify-center">
-              <div className="w-full max-w-sm aspect-square bg-gradient-to-br from-blue-400 to-pink-400 rounded-full opacity-80 blur-3xl absolute inset-0 animate-pulse" />
-              <div className="relative z-10 w-full max-w-sm aspect-square bg-white/10 rounded-full border border-white/20 flex items-center justify-center overflow-hidden">
-                <motion.div
-                   animate={{ rotate: 360 }}
-                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                   className="w-3/4 h-3/4 border-2 border-dashed border-white/20 rounded-full flex items-center justify-center"
-                >
-                   <div className="w-1/2 h-1/2 bg-white/20 rounded-3xl rotate-45" />
-                </motion.div>
+              <div className="space-y-4 max-w-md">
+                <p className="text-white/60 text-sm font-bold uppercase tracking-widest">
+                  Our mission is simple yet massive:
+                </p>
+                <p className="text-white/40 text-lg font-light leading-relaxed">
+                  Help every model we work with smash into the <span className="text-white font-medium">top 1%</span> (where the real money lives – up to 33% of platform revenue) and beyond, anonymously if that's your choice.
+                </p>
               </div>
             </div>
+
+            <div className="hidden lg:block" />
           </div>
         </motion.div>
       </div>

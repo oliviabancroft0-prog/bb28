@@ -70,7 +70,7 @@ const SECTIONS = [
       quote: 'True wealth in this industry is built on relationships, not just transactions.',
       stats: [
         { label: 'Response Time', value: '< 3min' },
-        { label: 'Fan LTV', value: '£1.4k' }
+        { label: 'Fan LTV', value: '£2,780' }
       ],
       results: [
         '24/7 dedicated chat managers',

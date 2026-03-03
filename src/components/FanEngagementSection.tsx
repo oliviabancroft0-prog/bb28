@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
 
 interface SectionProps {
   id: string;
@@ -78,15 +77,6 @@ export const FanEngagementSection: React.FC<SectionProps> = ({
             <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-md mb-12 font-light">
               {description} We deliver consistent growth and unparalleled fan satisfaction.
             </p>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group flex items-center gap-3 px-8 py-4 bg-zinc-900 text-white rounded-full font-bold text-xs uppercase tracking-widest transition-all w-fit mb-12"
-            >
-              Talk to expert
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
 
             <LineChart />
           </motion.div>
