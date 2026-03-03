@@ -74,11 +74,11 @@ export const PremiumWhiteSection: React.FC<SectionProps> = ({
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="relative z-10 w-full h-full min-h-[600px] overflow-hidden shadow-2xl rounded-3xl"
+              className="relative z-10 w-full overflow-hidden shadow-2xl rounded-3xl"
             >
               <img 
                 src={imageUrl} 
-                className="w-full h-full object-cover" 
+                className="w-full h-auto block" 
                 alt="Olivia"
                 referrerPolicy="no-referrer"
               />
