@@ -95,7 +95,7 @@ export const GrowthStats: React.FC = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+    <div className="grid grid-cols-1 gap-10 py-8">
       {stats.map((stat, index) => (
         <motion.div 
           key={index}
@@ -105,19 +105,19 @@ export const GrowthStats: React.FC = () => {
           transition={{ duration: 0.6, delay: index * 0.1 }}
           className="flex flex-col gap-4"
         >
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6 md:gap-8">
             {stat.isComparison ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <StatCircle percentage={5} value={stat.comparisonValue!} label={stat.comparisonLabel!} size="sm" />
-                <div className="w-4 h-[1px] bg-white/20" />
+                <div className="w-6 h-[1px] bg-white/20" />
                 <StatCircle percentage={stat.percentage} value={stat.value} label={stat.sublabel} size="md" />
               </div>
             ) : (
               <StatCircle percentage={stat.percentage} value={stat.value} label={stat.sublabel} />
             )}
             <div className="flex-1">
-              <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-1">{stat.label}</h4>
-              <p className="text-white/40 text-xs leading-relaxed max-w-[200px]">
+              <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-2">{stat.label}</h4>
+              <p className="text-white/40 text-xs leading-relaxed max-w-xs">
                 {stat.description}
               </p>
             </div>

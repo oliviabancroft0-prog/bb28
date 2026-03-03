@@ -70,7 +70,7 @@ export const MarketingGrowthSection: React.FC<SectionProps> = ({
             <h2 className="text-4xl md:text-6xl font-serif font-bold leading-tight text-white mb-8">
               OnlyFans isn't a get rich quick lottery for everyone.
             </h2>
-            <div className="space-y-6 mb-12 max-w-lg">
+            <div className="space-y-6 mb-12 max-w-xl">
               <p className="text-white/60 text-lg md:text-xl leading-relaxed font-light">
                 The platform average sits around £100–£150 a month without strategy, support, or scale.
               </p>
